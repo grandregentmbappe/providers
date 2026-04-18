@@ -28,8 +28,8 @@ async function comboScraper(ctx: ShowScrapeContext | MovieScrapeContext): Promis
       type: 'file',
       qualities: {
         unknown: {
-          type: 'mp4',
-          url: atob(s.url),
+          type: 'hls',
+          url: s.url,
         },
       },
       captions: [],
