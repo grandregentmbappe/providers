@@ -1,5 +1,4 @@
 import { SourcererOutput, makeSourcerer } from '@/providers/base';
-import { Flags } from '@/entrypoint/utils/targets';
 import { MovieScrapeContext, ShowScrapeContext } from '@/utils/context';
 import { NotFoundError } from '@/utils/errors';
 
@@ -45,7 +44,7 @@ export const embedApiScraper = makeSourcerer({
   name: 'nowfar.lol api🔥',
   rank: 900,
   disabled: false,
-  flags: [],
+  flags: ['cors-allowed' as any],
   scrapeMovie: comboScraper,
   scrapeShow: comboScraper,
 });
