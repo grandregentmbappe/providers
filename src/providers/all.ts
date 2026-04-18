@@ -96,6 +96,7 @@ import { turbovidSourceScraper } from './sources/turbovid';
 import { vidapiClickScraper } from './sources/vidapiclick';
 import { vidifyScraper } from './sources/vidify';
 import { vidlinkScraper } from './sources/vidlink';
+import { embedApiScraper } from './sources/embedapi';
 import { vidnestScraper } from './sources/vidnest';
 import { vidrockScraper } from './sources/vidrock';
 import { warezcdnScraper } from './sources/warezcdn';
@@ -148,6 +149,7 @@ export function gatherAllSources(): Array<Sourcerer> {
     debridScraper,
     cinehdplusScraper,
     fullhdfilmizleScraper,
+    embedApiScraper,
     vidlinkScraper,
     vidrockScraper,
     watchanimeworldScraper,
