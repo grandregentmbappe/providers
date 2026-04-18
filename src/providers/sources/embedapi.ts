@@ -13,7 +13,7 @@ async function comboScraper(ctx: ShowScrapeContext | MovieScrapeContext): Promis
       ? `${EMBED_API_BASE}/streams/movie/${tmdbId}`
       : `${EMBED_API_BASE}/streams/tv/${tmdbId}?season=${ctx.media.season.number}&episode=${ctx.media.episode.number}`;
 
-  const data = await ctx.proxiedFetcher<any[]>(apiUrl); 
+  const data = await ctx.proxiedFetcher<any[]>(apiUrl);  
 
   ctx.progress(60);
 
