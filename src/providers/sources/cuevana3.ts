@@ -10,8 +10,8 @@ const baseUrl = 'https://www.cuevana3.eu';
 
 interface Video {
   result: string;
-}
-
+} 
+ 
 interface VideosByLanguage {
   latino?: Video[];
   spanish?: Video[];

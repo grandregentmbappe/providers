@@ -13,23 +13,23 @@ async function comboScraper(ctx: ShowScrapeContext | MovieScrapeContext): Promis
       ? `${EMBED_API_BASE}/streams/movie/${tmdbId}`
       : `${EMBED_API_BASE}/streams/tv/${tmdbId}?season=${ctx.media.season.number}&episode=${ctx.media.episode.number}`;
 
-  const data = await ctx.proxiedFetcher<any[]>(apiUrl);  
+  const data = await ctx.proxiedFetcher<any>(apiUrl);
 
   ctx.progress(60);
 
-  if (!data || data.length === 0) throw new NotFoundError('No streams from embed API');
+  if (!data?.streams || data.streams.length === 0) throw new NotFoundError('No streams from embed API');
 
   ctx.progress(90);
 
   return {
     embeds: [],
-    stream: data.map((s: any) => ({
-      id: s.title || 'primary',
+    stream: data.streams.map((s: any) => ({
+      id: s.name || 'primary',
       type: 'file',
       qualities: {
         unknown: {
           type: 'mp4',
-          url: s.url,
+          url: atob(s.url),
         },
       },
       captions: [],
@@ -41,7 +41,7 @@ async function comboScraper(ctx: ShowScrapeContext | MovieScrapeContext): Promis
 
 export const embedApiScraper = makeSourcerer({
   id: 'embedapi',
-  name: 'nowfar.lol api (HQ) 🔥',
+  name: 'nowfar.lol api🔥',
   rank: 900,
   disabled: false,
   flags: [],
