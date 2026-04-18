@@ -25,13 +25,8 @@ async function comboScraper(ctx: ShowScrapeContext | MovieScrapeContext): Promis
     embeds: [],
     stream: data.streams.map((s: any) => ({
       id: s.name || 'primary',
-      type: 'file',
-      qualities: {
-        unknown: {
-          type: 'hls',
-          url: s.url,
-        },
-      },
+      type: 'hls',
+      playlist: s.url,
       captions: [],
       flags: ['cors-allowed'],
       headers: s.headers || {},
