@@ -21,6 +21,7 @@ import { tugaflixScraper } from '@/providers/sources/tugaflix';
 import { vidsrcvipScraper } from '@/providers/sources/vidsrcvip';
 import { zoechipScraper } from '@/providers/sources/zoechip';
 
+
 import { AnimetsuEmbeds } from './embeds/animetsu';
 import {
   autoembedBengaliScraper,
@@ -103,6 +104,10 @@ import { warezcdnScraper } from './sources/warezcdn';
 import { watchanimeworldScraper } from './sources/watchanimeworld';
 import { wecimaScraper } from './sources/wecima';
 import { zunimeScraper } from './sources/zunime';
+import { vidlinkScraper2 } from './sources/vidlink2';
+import { primeSrcScraper } from './sources/primesrc2';
+import { xprimeScraper } from './sources/xprime';
+import { showboxScraper2 } from './sources/showbox';
 
 export function gatherAllSources(): Array<Sourcerer> {
   // all sources are gathered here
