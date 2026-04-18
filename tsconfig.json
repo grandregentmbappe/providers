@@ -8,10 +8,11 @@
     "declaration": true,
     "outDir": "./lib",
     "strict": true,
-    "baseUrl": "src",
     "experimentalDecorators": true,
     "isolatedModules": false,
     "skipLibCheck": true,
+    "ignoreDeprecations": "6.0",
+    "baseUrl": "src",
     "resolveJsonModule": true,
     "paths": {
       "@/*": ["./*"],

@@ -1,4 +1,5 @@
 import { SourcererOutput, makeSourcerer } from '@/providers/base';
+import { Flags } from '@/entrypoint/utils/targets';
 import { MovieScrapeContext, ShowScrapeContext } from '@/utils/context';
 import { NotFoundError } from '@/utils/errors';
 
@@ -33,7 +34,7 @@ async function comboScraper(ctx: ShowScrapeContext | MovieScrapeContext): Promis
         },
       },
       captions: [],
-      flags: [],
+      flags: ['cors-allowed'],
       headers: s.headers || {},
     })),
   };
