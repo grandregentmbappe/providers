@@ -26,7 +26,7 @@ async function comboScraper(ctx: ShowScrapeContext | MovieScrapeContext): Promis
     stream: data.streams.map((s: any) => ({
       id: s.name || 'primary',
       type: 'hls',
-      playlist: s.url,                                                                                        
+      playlist: s.url,
       captions: [],
       flags: ['cors-allowed'],
       headers: s.headers || {},
@@ -42,4 +42,4 @@ export const embedApiScraper = makeSourcerer({
   flags: ['cors-allowed' as any],
   scrapeMovie: comboScraper,
   scrapeShow: comboScraper,
-});                                                                                                                                                                                                                   
+});
