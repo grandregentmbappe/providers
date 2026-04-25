@@ -1,8 +1,9 @@
 import { Embed, Sourcerer } from '@/providers/base';
+
 import { filemoonScraper } from './embeds/filemoon';
 import { mixdropScraper } from './embeds/mixdrop';
 import { serverMirrorEmbed } from './embeds/server-mirrors';
-import { streamtapeScraper, streamtapeLatinoScraper } from './embeds/streamtape';
+import { streamtapeLatinoScraper, streamtapeScraper } from './embeds/streamtape';
 import { VidnestEmbeds } from './embeds/vidnest';
 import {
   VidsrcsuServer10Scraper,
@@ -20,14 +21,14 @@ import {
   VidsrcsuServer9Scraper,
 } from './embeds/vidsrcsu';
 import { viperScraper } from './embeds/viper';
-
+import { warezcdnembedMp4Scraper } from './embeds/warezcdn/mp4';
 import { animeflvScraper } from './sources/animeflv';
 import { cinehdplusScraper } from './sources/cinehdplus-es';
 import { cuevana3Scraper } from './sources/cuevana3';
 import { embedApiScraper } from './sources/embedapi';
 import { FedAPIScraper } from './sources/fedapi';
-import { fsOnlineEmbeds, fsOnlineScraper } from './sources/fsonline/index';
 import { fsharetvScraper } from './sources/fsharetv';
+import { fsOnlineEmbeds, fsOnlineScraper } from './sources/fsonline/index';
 import { pelisplushdScraper } from './sources/pelisplushd';
 import { rgshowsScraper } from './sources/rgshows';
 import { streamboxScraper } from './sources/streambox';
@@ -63,6 +64,7 @@ export function gatherAllEmbeds(): Array<Embed> {
     streamtapeScraper,
     streamtapeLatinoScraper,
     viperScraper,
+    warezcdnembedMp4Scraper,
     ...VidnestEmbeds,
     ...fsOnlineEmbeds,
     VidsrcsuServer1Scraper,
